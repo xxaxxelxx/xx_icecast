@@ -16,7 +16,7 @@ It supports three modes.
 ### PROXY mode
 Container operates as a proxy for player containers.
 
-#### Environment
+#### ENVIRONMENT
 > ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
 
 - IC_ADMIN_PASS=*myadminpass*
@@ -24,6 +24,12 @@ Container operates as a proxy for player containers.
 - IC_RELAY_PASS=*myrelaypass*
 - SIMULCAST_MASTER_SERVER=*0.0.0.0*
 - CHANNEL_MASTER_SERVER=*0.0.0.0*
+
+#### EXPOSED
+- 8000
+
+#### USER
+- icecast2:icecast
 
 #### Run it
 ```bash
@@ -34,12 +40,18 @@ $ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS
 ### PLAYER mode
 Container operates as a player and get his streams from a proxy.
 
-#### Environment
+#### ENVIRONMENT
 > ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
 
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
+
+#### EXPOSED
+- 8000
+
+#### USER
+- icecast2:icecast
 
 #### Run it
 ```bash
@@ -52,12 +64,18 @@ $ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS
 
 Will not start any icecast process but prepares the environment.
 
-#### Environment
+#### ENVIRONMENT
 > ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
 
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
+
+#### EXPOSED
+- 8000
+
+#### USER
+- icecast2:icecast
 
 #### Run it
 ```bash
