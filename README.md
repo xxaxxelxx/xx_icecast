@@ -3,7 +3,7 @@
 [![](http://dockeri.co/image/xxaxxelxx/xx_icecast)](https://index.docker.io/u/xxaxxelxx/xx_icecast/)
 
 ## Synopsis
-This repo is the base for an [automated docker build] (https://hub.docker.com/r/xxaxxelxx/xx_icecast/).
+This repo is the base for an [automated docker build](https://hub.docker.com/r/xxaxxelxx/xx_icecast/).
 
 The running docker container provides a preconfigured icecast for very special streaming purposes usable for a distributed architecture.
 It presumably will not fit for you, but it is possible to tune it. If you need some additional information, feel free to ask.
