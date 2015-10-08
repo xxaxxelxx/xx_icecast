@@ -28,7 +28,7 @@ Container operates as a proxy for player containers
 
 ####Run it####
 ```bash
-docker run -d -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* -e SIMULCAST_MASTER_SERVER=*address* -e CHANNEL_MASTER_SERVER=*address* --name *mycontainername* xxaxxelxx/xx_icecast proxy
+docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast proxy
 ```
 ***
 
