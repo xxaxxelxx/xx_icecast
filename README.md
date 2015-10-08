@@ -27,40 +27,41 @@ Container operates as a proxy for player containers.
 
 ####Run it####
 ```bash
-docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast proxy
+$ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast proxy
 ```
 ***
 
 ### PLAYER mode
 Container operates as a player and get his streams from a proxy.
 
-
 ####Environment####
-
-**ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
-IC_ADMIN_PASS=myadminpass
-IC_SOURCE_PASS=mysourcepass
-IC_RELAY_PASS=myrelaypass
+> ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
+- IC_ADMIN_PASS=*myadminpass*
+- IC_SOURCE_PASS=*mysourcepass*
+- IC_RELAY_PASS=*myrelaypass*
 
 ####Run it####
-'''bash
-docker run -d -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* --name *mycontainername* xxaxxelxx/xx_icecast player
-'''
+```bash
+$ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass --name mycontainername xxaxxelxx/xx_icecast player
+```
 ***
 
 ### BASH mode
 **IS FOR TESTING PURPOSES**
+
 Will not start any icecast process but prepares the environment.
 
 ####Environment####
 **ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
-IC_ADMIN_PASS=myadminpass
-IC_SOURCE_PASS=mysourcepass
-IC_RELAY_PASS=myrelaypass
 
-'''bash
-docker run -it -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* --name *mycontainername* xxaxxelxx/xx_icecast
-'''
+- IC_ADMIN_PASS=*myadminpass*
+- IC_SOURCE_PASS=*mysourcepass*
+- IC_RELAY_PASS=*myrelaypass*
+
+####Run it####
+```bash
+$ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast
+```
 ***
 
 ## License
