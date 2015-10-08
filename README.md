@@ -36,6 +36,7 @@ Container operates as a player and get his streams from a proxy.
 
 ####Environment####
 > ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
+
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
@@ -52,7 +53,7 @@ $ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS
 Will not start any icecast process but prepares the environment.
 
 ####Environment####
-**ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
+> ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
 
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
