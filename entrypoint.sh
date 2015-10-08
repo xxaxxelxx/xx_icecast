@@ -3,41 +3,21 @@
 set -e
 set -x
 
-
-#function set_proxy() {
-#}
-
-
-#function set_player() {
-#}
-
-MODE="UNDEFINED"
+MODE="BASH"
 
 case $1 in
-    [dD][iI][sS][aA][bB][lL][eE][dD])
-    MODE="DISABLED"
-    exit
-;;
     [pP][rR][oO][xX][yY])
     MODE="PROXY"
 ;;
     [pP][lL][aA][yY][eE][rR])
     MODE="PLAYER"
 ;;
-    *)
-    $1
-#    exit 1
-;;
 esac
 
 if [ $MODE = "PROXY" ]; then
-    echo "PROXY"
     cp -f /etc/icecast2/icecast_proxy.xml /etc/icecast2/icecast.xml
 elif [ $MODE = "PLAYER" ]; then
-    echo "PLAYER"
     cp -f /etc/icecast2/icecast_player.xml /etc/icecast2/icecast.xml
-else
-    exit
 fi
 
 if [ -n "$IC_SOURCE_PASS" ]; then
@@ -57,7 +37,11 @@ if [ -n "$CHANNEL_MASTER_SERVER" ]; then
     sed -i "s/<server>CHANNEL_MASTER_SERVER<\/server>/<server>$CHANNEL_MASTER_SERVER<\/server>/g" /etc/icecast2/icecast.xml
 fi
 
-icecast2 -c /etc/icecast2/icecast.xml
+if [ $MODE = "PROXY" -o $MODE = "PLAYER" ]; then
+    icecast2 -c /etc/icecast2/icecast.xml
+else
+    bash
+fi
 
 exit
 
