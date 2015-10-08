@@ -18,8 +18,8 @@ Container operates as a proxy for player containers.
 
 ####Environment####
 
-> ATTENTION: 
-> Always SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
+ > ATTENTION: 
+ > Always SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
 
 
 - IC_ADMIN_PASS=*myadminpass*
