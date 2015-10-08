@@ -18,9 +18,9 @@ Container operates as a proxy for player containers
 ####Environment####
 
 **ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
-IC_ADMIN_PASS=myadminpass
-IC_SOURCE_PASS=myrelaypass
-IC_RELAY_PASS=myrelaypass
+*IC_ADMIN_PASS=myadminpass
+*IC_SOURCE_PASS=myrelaypass
+*IC_RELAY_PASS=myrelaypass
 
 SIMULCAST_MASTER_SERVER=0.0.0.0
 CHANNEL_MASTER_SERVER=0.0.0.0
@@ -54,9 +54,9 @@ Will not start any icecast process but prepares the environment.
 
 ####Environment####
 **ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
->IC_ADMIN_PASS=myadminpass
->IC_SOURCE_PASS=mysourcepass
->IC_RELAY_PASS=myrelaypass
+IC_ADMIN_PASS=myadminpass
+IC_SOURCE_PASS=mysourcepass
+IC_RELAY_PASS=myrelaypass
 
 '''bash
 docker run -it -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* --name *mycontainername* xxaxxelxx/xx_icecast
