@@ -12,6 +12,9 @@ case $1 in
     [pP][lL][aA][yY][eE][rR])
     MODE="PLAYER"
 ;;
+    [bB][aA][sS][hH])
+    MODE="BASH"
+;;
 esac
 
 if [ $MODE = "PROXY" ]; then
@@ -37,10 +40,10 @@ if [ -n "$CHANNEL_MASTER_SERVER" ]; then
     sed -i "s/<server>CHANNEL_MASTER_SERVER<\/server>/<server>$CHANNEL_MASTER_SERVER<\/server>/g" /etc/icecast2/icecast.xml
 fi
 
-if [ $MODE = "PROXY" -o $MODE = "PLAYER" ]; then
-    icecast2 -c /etc/icecast2/icecast.xml
-else
+if [ $MODE = "BASH" ]; then
     bash
+else
+    icecast2 -c /etc/icecast2/icecast.xml
 fi
 
 exit

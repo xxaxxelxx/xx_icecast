@@ -28,4 +28,4 @@ USER icecast2:icecast
 EXPOSE 8000
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-#CMD [ "disabled" ]
+CMD [ "bash" ]
