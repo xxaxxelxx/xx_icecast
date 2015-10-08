@@ -1,6 +1,7 @@
 # Icecast for use with Docker
 
-[![](http://dockeri.co/image/xxaxxelxx/xx_icecast)](https://index.docker.io/u/xxaxxelxx/xx_icecast/)
+![Docker image](http://dockeri.co/image/xxaxxelxx/xx_icecast)
+[xxaxxelxx/xx_icecast](https://index.docker.io/u/xxaxxelxx/xx_icecast/)
 
 ## Synopsis
 This repo is the base for an [automated docker build](https://hub.docker.com/r/xxaxxelxx/xx_icecast/).
