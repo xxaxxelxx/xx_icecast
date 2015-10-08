@@ -1,31 +1,65 @@
+# Icecast for use with Docker
+
+[![](http://dockeri.co/image/xxaxxelxx/xx_icecast)](https://index.docker.io/u/xxaxxelxx/xx_icecast/)
+
 ## Synopsis
+This repo is the base for an [automated docker build] (https://hub.docker.com/r/xxaxxelxx/xx_icecast/).
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+The running docker container provides a preconfigured icecast for very special streaming purposes usable for a distributed architecture.
+It presumably will not fit for you, but it is possible to tune it. If you need some additional information, feel free to ask.
 
-## Code Example
+## Usage
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+It supports three modes.
 
-## Motivation
+### PROXY mode
+Container operates as a proxy for player containers
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+####Environment####
 
-## Installation
+**ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
+IC_ADMIN_PASS=myadminpass
+IC_SOURCE_PASS=myrelaypass
+IC_RELAY_PASS=myrelaypass
 
-Provide code examples and explanations of how to get the project.
+SIMULCAST_MASTER_SERVER=0.0.0.0
+CHANNEL_MASTER_SERVER=0.0.0.0
 
-## API Reference
+####Run it####
+'''bash
+docker run -d -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* -e SIMULCAST_MASTER_SERVER=*address* -e CHANNEL_MASTER_SERVER=*address* --name *mycontainername* xxaxxelxx/xx_icecast proxy
+'''
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+### PLAYER mode
+Container operates as a player and get his streams from a proxy.
 
-## Tests
 
-Describe and show how to run the tests with code examples.
+####Environment####
 
-## Contributors
+**ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
+IC_ADMIN_PASS=myadminpass
+IC_SOURCE_PASS=mysourcepass
+IC_RELAY_PASS=myrelaypass
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+####Run it####
+'''bash
+docker run -d -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* --name *mycontainername* xxaxxelxx/xx_icecast player
+'''
+
+### BASH mode
+**IS FOR TESTING PURPOSES**
+Will not start any icecast process but prepares the environment.
+
+####Environment####
+**ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
+IC_ADMIN_PASS=myadminpass
+IC_SOURCE_PASS=mysourcepass
+IC_RELAY_PASS=myrelaypass
+
+'''bash
+docker run -it -p 80:8000 -e IC_ADMIN_PASS=*myspecialadminpass* -e IC_SOURCE_PASS=*myspecialsourcepass* -e IC_RELAY_PASS=*myspecialrelaypass* --name *mycontainername* xxaxxelxx/xx_icecast
+'''
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+[MIT](https://github.com/xxaxxelxx/xx_icecast/blob/master/LICENSE.md)
