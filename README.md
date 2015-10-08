@@ -23,7 +23,6 @@ Container operates as a proxy for player containers
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
-
 - SIMULCAST_MASTER_SERVER=*0.0.0.0*
 - CHANNEL_MASTER_SERVER=*0.0.0.0*
 
