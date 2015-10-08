@@ -18,14 +18,14 @@ Container operates as a proxy for player containers
 
 ####Environment####
 
-> **ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS !!!**
+> ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
 
-- IC_ADMIN_PASS=myadminpass
-- IC_SOURCE_PASS=myrelaypass
-- IC_RELAY_PASS=myrelaypass
+- IC_ADMIN_PASS=*myadminpass*
+- IC_SOURCE_PASS=*mysourcepass*
+- IC_RELAY_PASS=*myrelaypass*
 
-- SIMULCAST_MASTER_SERVER=0.0.0.0
-- CHANNEL_MASTER_SERVER=0.0.0.0
+- SIMULCAST_MASTER_SERVER=*0.0.0.0*
+- CHANNEL_MASTER_SERVER=*0.0.0.0*
 
 ####Run it####
 '''bash
