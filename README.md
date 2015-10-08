@@ -66,4 +66,4 @@ $ docker run -it -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PAS
 
 ## License
 
-[MIT](https://github.com/xxaxxelxx/xx_icecast/blob/master/LICENSE)
+[MIT](https://github.com/xxaxxelxx/xx_icecast/blob/master/LICENSE.md)
