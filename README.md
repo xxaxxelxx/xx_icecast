@@ -17,10 +17,7 @@ It supports three modes.
 Container operates as a proxy for player containers.
 
 ####Environment####
-
- > ATTENTION: 
- > Always SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
-
+> ATTENTION: Always set your own passwords to prevent any unauthorized access!!!
 
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
