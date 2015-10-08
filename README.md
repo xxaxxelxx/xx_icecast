@@ -1,6 +1,5 @@
 # Icecast for use with Docker
 
-![Docker image](http://dockeri.co/image/xxaxxelxx/xx_icecast)
 [xxaxxelxx/xx_icecast](https://index.docker.io/u/xxaxxelxx/xx_icecast/)
 
 ## Synopsis
