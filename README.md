@@ -14,11 +14,13 @@ It supports three modes.
 
 ***
 ### PROXY mode
-Container operates as a proxy for player containers
+Container operates as a proxy for player containers.
 
 ####Environment####
 
-> ATTENTION: ALWAYS SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
+> ATTENTION: 
+> Always SET YOUR OWN PASSWORDS TO PREVENT ANY UNAUTHORIZED ACCESS!!!
+
 
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
