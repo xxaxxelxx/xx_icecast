@@ -6,6 +6,10 @@ RUN apt-get -qq -y update
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq -y install icecast2
+
+RUN apt-get -qq -y install telnet
+RUN apt-get -qq -y install links
+
 RUN apt-get clean
 
 COPY icecast_player.xml /etc/icecast2/icecast_player.xml
@@ -25,7 +29,7 @@ ENV CHANNEL_MASTER_SERVER=0.0.0.0
 
 USER icecast2:icecast
 
-EXPOSE 8001
+EXPOSE 8000
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "bash" ]
