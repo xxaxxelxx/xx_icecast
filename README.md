@@ -26,7 +26,7 @@ Container operates as a proxy for player containers.
 - CHANNEL_MASTER_SERVER=*0.0.0.0*
 
 #### EXPOSED
-- 8000
+- 8001
 
 #### USER
 - icecast2:icecast
@@ -48,7 +48,7 @@ Container operates as a player and get his streams from a proxy.
 - IC_RELAY_PASS=*myrelaypass*
 
 #### EXPOSED
-- 8000
+- 8001
 
 #### USER
 - icecast2:icecast
@@ -72,7 +72,7 @@ Will not start any icecast process but prepares the environment.
 - IC_RELAY_PASS=*myrelaypass*
 
 #### EXPOSED
-- 8000
+- 8001
 
 #### USER
 - icecast2:icecast
