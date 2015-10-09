@@ -22,13 +22,13 @@
 
     <authentication>
         <!-- Sources log in with username 'source' -->
-        <source-password>lalalala1</source-password>
+        <source-password>IC_SOURCE_PASS</source-password>
         <!-- Relays log in username 'relay' -->
-        <relay-password>lalalala1</relay-password>
+        <relay-password>IC_RELAY_PASS</relay-password>
 
         <!-- Admin logs in with the username given below -->
         <admin-user>admin</admin-user>
-        <admin-password>lalalala1</admin-password>
+        <admin-password>IC_ADMIN_PASS</admin-password>
     </authentication>
 
     <!-- Uncomment this if you want directory listings -->
@@ -53,7 +53,7 @@
 
     <!-- You may have multiple <listener> elements -->
     <listen-socket>
-        <port>80</port>
+        <port>8000</port>
         <!-- <bind-address>127.0.0.1</bind-address> -->
     </listen-socket>
     <!--
@@ -94,9 +94,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
     <relay>
-	<server><GROUP_PROXY_BBR></server>
-	<!--server><GROUP_PROXY2></server-->
-	<!--server>141.16.141.2</server-->
+	<server>SIMULCAST_PROXY_SERVER</server>
 	<port>80</port>
 	<mount>/bbr_master.mp3</mount>
 	<local-mount>/bbr_master.mp3</local-mount>
@@ -293,7 +291,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch00.mp3</mount>
@@ -341,7 +339,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch01.mp3</mount>
@@ -389,7 +387,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch02.mp3</mount>
@@ -437,7 +435,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch03.mp3</mount>
@@ -485,7 +483,7 @@
     </mount>
     
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch04.mp3</mount>
@@ -533,7 +531,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch05.mp3</mount>
@@ -581,7 +579,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch06.mp3</mount>
@@ -629,7 +627,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch07.mp3</mount>
@@ -677,7 +675,7 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch08.mp3</mount>
@@ -725,7 +723,7 @@
     </mount>
     
 <relay>
-    <server><GROUP_PROXY_BBR></server>
+    <server>CHANNEL_PROXY_SERVER</server>
     <!--server>62.225.48.243</server-->
     <port>80</port>
     <mount>/bbradio-ch09.mp3</mount>
