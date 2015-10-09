@@ -25,7 +25,7 @@ ENV CHANNEL_MASTER_SERVER=0.0.0.0
 
 USER icecast2:icecast
 
-EXPOSE 80
+EXPOSE 8000
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "bash" ]
