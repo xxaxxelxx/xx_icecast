@@ -22,8 +22,14 @@ Container operates as a proxy for player containers.
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
-- SIMULCAST_MASTER_SERVER=*0.0.0.0*
-- CHANNEL_MASTER_SERVER=*0.0.0.0*
+- IC_PORT=*80*
+- MASTER_SERVER_PORT=*80*
+- SIMULCAST_MASTER_SERVER_BBR=*0.0.0.0*
+- SIMULCAST_MASTER_SERVER_TDY=*0.0.0.0*
+- SIMULCAST_MASTER_SERVER_OW=*0.0.0.0*
+- CHANNEL_MASTER_SERVER_BBR=*0.0.0.0*
+- CHANNEL_MASTER_SERVER_TDY=*0.0.0.0*
+- CHANNEL_MASTER_SERVER_OW=*0.0.0.0*
 
 #### EXPOSED
 - 8000
@@ -46,9 +52,16 @@ Container operates as a player and get his streams from a proxy.
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
+- IC_PORT=*80*
+- SIMULCAST_PROXY_SERVER_BBR=*0.0.0.0*
+- SIMULCAST_PROXY_SERVER_TDY=*0.0.0.0*
+- SIMULCAST_PROXY_SERVER_OW=*0.0.0.0*
+- CHANNEL_PROXY_SERVER_BBR=*0.0.0.0*
+- CHANNEL_PROXY_SERVER_TDY=*0.0.0.0*
+- CHANNEL_PROXY_SERVER_OW=*0.0.0.0*
 
 #### EXPOSED
-- 8000
+- $IC_PORT
 
 #### USER
 - icecast2:icecast
@@ -70,16 +83,18 @@ Will not start any icecast process but prepares the environment.
 - IC_ADMIN_PASS=*myadminpass*
 - IC_SOURCE_PASS=*mysourcepass*
 - IC_RELAY_PASS=*myrelaypass*
+_ IC_PORT=*80*
 
 #### EXPOSED
-- 8000
+- $IC_PORT
 
 #### USER
 - icecast2:icecast
 
 #### Run it
 ```bash
-$ docker run -it -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast
+$ docker run -it -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_PROXY_SERVER=address -e CHANNEL_PROXY_
+SERVER=address --name mycontainername xxaxxelxx/xx_icecast
 ```
 ***
 

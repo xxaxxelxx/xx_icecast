@@ -53,7 +53,7 @@
 
     <!-- You may have multiple <listener> elements -->
     <listen-socket>
-        <port>8000</port>
+        <port>IC_PORT</port>
         <!-- <bind-address>127.0.0.1</bind-address> -->
     </listen-socket>
     <!--
@@ -94,18 +94,18 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
     <relay>
-	<server>SIMULCAST_PROXY_SERVER</server>
-	<port>80</port>
+	<server>SIMULCAST_PROXY_SERVER_BBR</server>
+	<port>PROXY_SERVER_PORT</port>
 	<mount>/bbr_master.mp3</mount>
 	<local-mount>/bbr_master.mp3</local-mount>
 	<!--username>source</source-->
-	<!--password>zuppi1075zuppi</password-->
+	<!--password>mypassword</password-->
     </relay>
 
     <mount>
         <mount-name>/bbradio.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <max-listener-duration>86340</max-listener-duration>
@@ -139,7 +139,7 @@
     <mount>
         <mount-name>/bbradio-mobile.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -172,14 +172,14 @@
 
     <relay>
 	<server>127.0.0.1</server>
-	<port>80</port>
+	<port>IC_PORT</port>
 	<mount>/bbradio-mobile.mp3</mount>
 	<local-mount>/bbradio-mobile-ios.mp3</local-mount>
     </relay>
 
     <relay>
 	<server>127.0.0.1</server>
-	<port>80</port>
+	<port>IC_PORT</port>
 	<mount>/bbradio-mobile.mp3</mount>
 	<local-mount>/bbradio-mobile-android.mp3</local-mount>
     </relay>
@@ -187,7 +187,7 @@
     <mount>
         <mount-name>/bbradio.ogg</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -221,7 +221,7 @@
     <mount>
         <mount-name>/bbradio.opus</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -255,7 +255,7 @@
     <mount>
         <mount-name>/bbradio.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -291,18 +291,17 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch00.mp3</mount>
     <local-mount>/bbradio-ch00_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>sourcepass</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch00.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -321,7 +320,7 @@
     <mount>
         <mount-name>/bbradio-ch00.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -339,18 +338,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch01.mp3</mount>
     <local-mount>/bbradio-ch01_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch01.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -369,7 +367,7 @@
     <mount>
         <mount-name>/bbradio-ch01.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -387,18 +385,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch02.mp3</mount>
     <local-mount>/bbradio-ch02_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch02.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -417,7 +414,7 @@
     <mount>
         <mount-name>/bbradio-ch02.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -435,18 +432,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch03.mp3</mount>
     <local-mount>/bbradio-ch03_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch03.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -465,7 +461,7 @@
     <mount>
         <mount-name>/bbradio-ch03.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -483,18 +479,17 @@
     </mount>
     
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch04.mp3</mount>
     <local-mount>/bbradio-ch04_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch04.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -513,7 +508,7 @@
     <mount>
         <mount-name>/bbradio-ch04.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -531,18 +526,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch05.mp3</mount>
     <local-mount>/bbradio-ch05_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch05.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -561,7 +555,7 @@
     <mount>
         <mount-name>/bbradio-ch05.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -579,18 +573,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch06.mp3</mount>
     <local-mount>/bbradio-ch06_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch06.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -609,7 +602,7 @@
     <mount>
         <mount-name>/bbradio-ch06.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -627,18 +620,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch07.mp3</mount>
     <local-mount>/bbradio-ch07_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch07.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -657,7 +649,7 @@
     <mount>
         <mount-name>/bbradio-ch07.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -675,18 +667,17 @@
     </mount>
 
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch08.mp3</mount>
     <local-mount>/bbradio-ch08_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch08.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -705,7 +696,7 @@
     <mount>
         <mount-name>/bbradio-ch08.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -723,18 +714,17 @@
     </mount>
     
 <relay>
-    <server>CHANNEL_PROXY_SERVER</server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/bbradio-ch09.mp3</mount>
     <local-mount>/bbradio-ch09_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1075zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/bbradio-ch09.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -753,7 +743,7 @@
     <mount>
         <mount-name>/bbradio-ch09.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1075zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -778,19 +768,18 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
     <relay>
-	<server><GROUP_PROXY_TDY></server>
-	<!--server>141.16.141.2</server-->
-	<port>80</port>
+	<server>SIMULCAST_PROXY_SERVER_TDY</server>
+	<port>PROXY_SERVER_PORT</port>
 	<mount>/tdy_master.mp3</mount>
 	<local-mount>/tdy_master.mp3</local-mount>
 	<!--username>source</source-->
-	<!--password>zuppi902zuppi</password-->
+	<!--password>IC_SRC_PASS</password-->
     </relay>
 
     <mount>
         <mount-name>/radioteddy.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -824,7 +813,7 @@
     <mount>
         <mount-name>/radioteddy-mobile.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -857,14 +846,14 @@
 
     <relay>
 	<server>127.0.0.1</server>
-	<port>80</port>
+	<port>IC_PORT</port>
 	<mount>/radioteddy-mobile.mp3</mount>
 	<local-mount>/radioteddy-mobile-ios.mp3</local-mount>
     </relay>
 
     <relay>
 	<server>127.0.0.1</server>
-	<port>80</port>
+	<port>IC_PORT</port>
 	<mount>/radioteddy-mobile.mp3</mount>
 	<local-mount>/radioteddy-mobile-android.mp3</local-mount>
     </relay>
@@ -872,7 +861,7 @@
     <mount>
         <mount-name>/radioteddy.ogg</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -906,7 +895,7 @@
     <mount>
         <mount-name>/radioteddy.opus</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -940,7 +929,7 @@
     <mount>
         <mount-name>/radioteddy.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
 
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
@@ -977,18 +966,17 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch00.mp3</mount>
     <local-mount>/radioteddy-ch00_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch00.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1007,7 +995,7 @@
     <mount>
         <mount-name>/radioteddy-ch00.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1025,18 +1013,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch01.mp3</mount>
     <local-mount>/radioteddy-ch01_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch01.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1055,7 +1042,7 @@
     <mount>
         <mount-name>/radioteddy-ch01.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1073,18 +1060,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch02.mp3</mount>
     <local-mount>/radioteddy-ch02_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch02.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1103,7 +1089,7 @@
     <mount>
         <mount-name>/radioteddy-ch02.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1121,18 +1107,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch03.mp3</mount>
     <local-mount>/radioteddy-ch03_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch03.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1151,7 +1136,7 @@
     <mount>
         <mount-name>/radioteddy-ch03.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1169,18 +1154,17 @@
     </mount>
     
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch04.mp3</mount>
     <local-mount>/radioteddy-ch04_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch04.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1199,7 +1183,7 @@
     <mount>
         <mount-name>/radioteddy-ch04.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1217,18 +1201,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch05.mp3</mount>
     <local-mount>/radioteddy-ch05_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch05.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1247,7 +1230,7 @@
     <mount>
         <mount-name>/radioteddy-ch05.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1265,18 +1248,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch06.mp3</mount>
     <local-mount>/radioteddy-ch06_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch06.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1295,7 +1277,7 @@
     <mount>
         <mount-name>/radioteddy-ch06.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1313,18 +1295,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch07.mp3</mount>
     <local-mount>/radioteddy-ch07_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch07.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1343,7 +1324,7 @@
     <mount>
         <mount-name>/radioteddy-ch07.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1361,18 +1342,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_TDY></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/radioteddy-ch08.mp3</mount>
     <local-mount>/radioteddy-ch08_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi902zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/radioteddy-ch08.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1391,7 +1371,7 @@
     <mount>
         <mount-name>/radioteddy-ch08.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi902zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1408,24 +1388,223 @@
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch08.aac</stream-url>
     </mount>
 
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xx OSTSEEWELLE xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+    <relay>
+	<server>SIMULCAST_PROXY_SERVER_OW</server>
+	<port>PROXY_SERVER_PORT</port>
+	<mount>/ow_master.mp3</mount>
+	<local-mount>/ow_master.mp3</local-mount>
+	<!--username>source</source-->
+	<!--password>IC_SRC_PASS</password-->
+    </relay>
+
+    <mount>
+        <mount-name>/ostseewelle.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+
+
+        <fallback-mount>/fallback_ostseewelle.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+
+        <intro>/intro_ostseewelle.mp3</intro>
+
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
+        <stream-description>We stream Radio TEDDY. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle.mp3</stream-url>
+        
+        
+        <!--authentication type="htpasswd">
+                <option name="filename" value="myauth"/>
+                <option name="allow_duplicate_users" value="0"/>
+        </authentication-->
+        <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
+        <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
+    </mount>
+    
+    <mount>
+        <mount-name>/ostseewelle-mobile.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+
+
+        <fallback-mount>/fallback_ostseewelle-mobile.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+
+        <intro>/intro_ostseewelle-mobile.mp3</intro>
+
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Mono MP3 Stream</stream-name>
+        <stream-description>We stream Radio TEDDY. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle-mobile.mp3</stream-url>
+        
+        
+        <!--authentication type="htpasswd">
+                <option name="filename" value="myauth"/>
+                <option name="allow_duplicate_users" value="0"/>
+        </authentication-->
+        <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
+        <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
+    </mount>
+
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/ostseewelle-mobile.mp3</mount>
+	<local-mount>/ostseewelle-mobile-ios.mp3</local-mount>
+    </relay>
+
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/ostseewelle-mobile.mp3</mount>
+	<local-mount>/ostseewelle-mobile-android.mp3</local-mount>
+    </relay>
+
+    <mount>
+        <mount-name>/ostseewelle.ogg</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+
+
+        <fallback-mount>/fallback_ostseewelle.ogg</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+
+        <!--intro>/intro_ostseewelle.ogg</intro-->
+
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Stereo OGG Stream</stream-name>
+	<stream-description>We stream Radio TEDDY. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle.ogg</stream-url>
+        
+        
+        <!--authentication type="htpasswd">
+                <option name="filename" value="myauth"/>
+                <option name="allow_duplicate_users" value="0"/>
+        </authentication-->
+        <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
+        <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
+    </mount>
+
+    <mount>
+        <mount-name>/ostseewelle.opus</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        
+        <!--dump-file>/tmp/dump-example1.opus</dump-file-->
+        <burst-size>131072</burst-size>
+
+
+        <fallback-mount>/fallback_ostseewelle.opus</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+
+        <!--intro>/intro_ostseewelle.opus</intro-->
+
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Stereo OPUS Stream</stream-name>
+	<stream-description>We stream Radio TEDDY. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle.ogg</stream-url>
+        
+        
+        <!--authentication type="htpasswd">
+                <option name="filename" value="myauth"/>
+                <option name="allow_duplicate_users" value="0"/>
+        </authentication-->
+        <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
+        <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
+    </mount>
+
+    <mount>
+        <mount-name>/ostseewelle.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+
+
+        <fallback-mount>/fallback_ostseewelle.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+
+        <intro>/intro_ostseewelle.aac</intro>
+
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY AAC Stream</stream-name>
+        <stream-description>We stream Radio TEDDY. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle.aac</stream-url>
+        
+        <!--authentication type="htpasswd">
+                <option name="filename" value="myauth"/>
+                <option name="allow_duplicate_users" value="0"/>
+        </authentication-->
+        <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
+        <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
+    </mount>
+
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xx OSTSEEWELLE CHANNELS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch00.mp3</mount>
     <local-mount>/ostseewelle-ch00_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch00.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1444,7 +1623,7 @@
     <mount>
         <mount-name>/ostseewelle-ch00.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1462,18 +1641,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch01.mp3</mount>
     <local-mount>/ostseewelle-ch01_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch01.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1492,7 +1670,7 @@
     <mount>
         <mount-name>/ostseewelle-ch01.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1510,18 +1688,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch02.mp3</mount>
     <local-mount>/ostseewelle-ch02_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch02.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1540,7 +1717,7 @@
     <mount>
         <mount-name>/ostseewelle-ch02.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1558,18 +1735,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch03.mp3</mount>
     <local-mount>/ostseewelle-ch03_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch03.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1588,7 +1764,7 @@
     <mount>
         <mount-name>/ostseewelle-ch03.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1606,18 +1782,17 @@
     </mount>
     
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch04.mp3</mount>
     <local-mount>/ostseewelle-ch04_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch04.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1636,7 +1811,7 @@
     <mount>
         <mount-name>/ostseewelle-ch04.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1654,18 +1829,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch05.mp3</mount>
     <local-mount>/ostseewelle-ch05_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch05.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1684,7 +1858,7 @@
     <mount>
         <mount-name>/ostseewelle-ch05.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1702,18 +1876,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch06.mp3</mount>
     <local-mount>/ostseewelle-ch06_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch06.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1732,7 +1905,7 @@
     <mount>
         <mount-name>/ostseewelle-ch06.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1750,18 +1923,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch07.mp3</mount>
     <local-mount>/ostseewelle-ch07_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch07.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1780,7 +1952,7 @@
     <mount>
         <mount-name>/ostseewelle-ch07.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1798,18 +1970,17 @@
     </mount>
 
 <relay>
-    <server><GROUP_PROXY_OW></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
+    <server>CHANNEL_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch08.mp3</mount>
     <local-mount>/ostseewelle-ch08_master.mp3</local-mount>
     <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
+    <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
         <mount-name>/ostseewelle-ch08.mp3</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1828,7 +1999,7 @@
     <mount>
         <mount-name>/ostseewelle-ch08.aac</mount-name>
         <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
+        <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
         <!--max-listener-duration>86400</max-listener-duration-->
         <max-listener-duration>86340</max-listener-duration>
@@ -1845,50 +2016,6 @@
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch08.aac</stream-url>
     </mount>
 
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- xx PLAY IT LOUD xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<relay>
-    <server><GROUP_PROXY_BBR></server>
-    <!--server>62.225.48.243</server-->
-    <port>80</port>
-    <mount>/playitloud</mount>
-    <local-mount>/playitloud</local-mount>
-    <!--username>source</source-->
-    <!--password>zuppi1048zuppi</password-->
-</relay>
-    <mount>
-        <mount-name>/playitloud.mp3</mount-name>
-        <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
-        <max-listeners>1024</max-listeners>
-        <!--max-listener-duration>86400</max-listener-duration-->
-        <max-listener-duration>86340</max-listener-duration>
-        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
-        <burst-size>131072</burst-size>
-        <hidden>0</hidden>
-        <public>0</public>
-        <stream-name>PLAY IT LOUD - Stereo MP3 Stream</stream-name>
-        <stream-description>Stay tuned. Enjoy the show. Bis einer heult.</stream-description>
-        <stream-url>http://streams.ir-media-tec.com/playitloud.mp3</stream-url>
-    </mount>
-    <mount>
-        <mount-name>/playitloud.aac</mount-name>
-        <!--username>source</username-->
-        <password>zuppi1048zuppi</password>
-        <max-listeners>1024</max-listeners>
-        <!--max-listener-duration>86400</max-listener-duration-->
-        <max-listener-duration>86340</max-listener-duration>
-        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
-        <burst-size>131072</burst-size>
-        <hidden>0</hidden>
-        <public>0</public>
-        <stream-name>PLAY IT LOUD - Stereo AAC Stream</stream-name>
-        <stream-description>Stay tuned. Enjoy the show. Bis einer heult.</stream-description>
-        <stream-url>http://streams.ir-media-tec.com/playitloud.aac</stream-url>
-    </mount>
 
 <!--
     <mount>

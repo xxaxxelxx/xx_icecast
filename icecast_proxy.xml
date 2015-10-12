@@ -53,7 +53,7 @@
 
     <!-- You may have multiple <listener> elements -->
     <listen-socket>
-        <port>8000</port>
+        <port>IC_PORT</port>
         <!-- <bind-address>127.0.0.1</bind-address> -->
     </listen-socket>
     <!--
@@ -94,78 +94,78 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <relay>
-    <server>SIMULCAST_MASTER_SERVER</server>
-    <port>80</port>
+    <server>SIMULCAST_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbr_master.mp3</mount>
     <local-mount>/bbr_master.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch00.out</mount>
     <local-mount>/bbradio-ch00.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch01.out</mount>
     <local-mount>/bbradio-ch01.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch02.out</mount>
     <local-mount>/bbradio-ch02.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch03.out</mount>
     <local-mount>/bbradio-ch03.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch04.out</mount>
     <local-mount>/bbradio-ch04.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch05.out</mount>
     <local-mount>/bbradio-ch05.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch06.out</mount>
     <local-mount>/bbradio-ch06.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch07.out</mount>
     <local-mount>/bbradio-ch07.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch08.out</mount>
     <local-mount>/bbradio-ch08.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/bbradio-ch09.out</mount>
     <local-mount>/bbradio-ch09.mp3</local-mount>
 </relay>
@@ -177,71 +177,71 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <relay>
-    <server>SIMULCAST_MASTER_SERVER</server>
-    <port>80</port>
+    <server>SIMULCAST_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/tdy_master.mp3</mount>
     <local-mount>/tdy_master.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch00.out</mount>
     <local-mount>/radioteddy-ch00.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch01.out</mount>
     <local-mount>/radioteddy-ch01.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch02.out</mount>
     <local-mount>/radioteddy-ch02.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch03.out</mount>
     <local-mount>/radioteddy-ch03.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch04.out</mount>
     <local-mount>/radioteddy-ch04.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch05.out</mount>
     <local-mount>/radioteddy-ch05.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch06.out</mount>
     <local-mount>/radioteddy-ch06.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch07.out</mount>
     <local-mount>/radioteddy-ch07.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_TDY</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/radioteddy-ch08.out</mount>
     <local-mount>/radioteddy-ch08.mp3</local-mount>
 </relay>
@@ -253,64 +253,71 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>SIMULCAST_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
+    <mount>/tdy_master.mp3</mount>
+    <local-mount>/tdy_master.mp3</local-mount>
+</relay>
+
+<relay>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch00.out</mount>
     <local-mount>/ostseewelle-ch00.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch01.out</mount>
     <local-mount>/ostseewelle-ch01.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch02.out</mount>
     <local-mount>/ostseewelle-ch02.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch03.out</mount>
     <local-mount>/ostseewelle-ch03.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch04.out</mount>
     <local-mount>/ostseewelle-ch04.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch05.out</mount>
     <local-mount>/ostseewelle-ch05.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch06.out</mount>
     <local-mount>/ostseewelle-ch06.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch07.out</mount>
     <local-mount>/ostseewelle-ch07.mp3</local-mount>
 </relay>
 
 <relay>
-    <server>CHANNEL_MASTER_SERVER</server>
-    <port>80</port>
+    <server>CHANNEL_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
     <mount>/ostseewelle-ch08.out</mount>
     <local-mount>/ostseewelle-ch08.mp3</local-mount>
 </relay>

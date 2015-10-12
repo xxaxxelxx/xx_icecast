@@ -23,6 +23,7 @@ if [ $MODE = "PROXY" ]; then
 elif [ $MODE = "PLAYER" ]; then
     cp -f /etc/icecast2/icecast_player.xml /etc/icecast2/icecast.xml
 fi
+
 # password section
 if [ -n "$IC_SOURCE_PASS" ]; then
     sed -i "s/<source-password>[^<]*<\/source-password>/<source-password>$IC_SOURCE_PASS<\/source-password>/g" /etc/icecast2/icecast.xml
@@ -33,12 +34,36 @@ fi
 if [ -n "$IC_ADMIN_PASS" ]; then
     sed -i "s/<admin-password>[^<]*<\/admin-password>/<admin-password>$IC_ADMIN_PASS<\/admin-password>/g" /etc/icecast2/icecast.xml
 fi
-# address section
-if [ -n "$SIMULCAST_MASTER_SERVER" ]; then
-    sed -i "s/<server>SIMULCAST_MASTER_SERVER<\/server>/<server>$SIMULCAST_MASTER_SERVER<\/server>/g" /etc/icecast2/icecast.xml
+
+# port section
+if [ -n "$IC_PORT" ]; then
+    sed -i "s/<port>IC_PORT<\/port>/<port>$IC_PORT<\/port>/g" /etc/icecast2/icecast.xml
 fi
-if [ -n "$CHANNEL_MASTER_SERVER" ]; then
-    sed -i "s/<server>CHANNEL_MASTER_SERVER<\/server>/<server>$CHANNEL_MASTER_SERVER<\/server>/g" /etc/icecast2/icecast.xml
+if [ -n "$PROXY_SERVER_PORT" ]; then
+    sed -i "s/<port>PROXY_SERVER_PORT<\/port>/<port>$PROXY_SERVER_PORT<\/port>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$MASTER_SERVER_PORT" ]; then
+    sed -i "s/<port>MASTER_SERVER_PORT<\/port>/<port>$MASTER_SERVER_PORT<\/port>/g" /etc/icecast2/icecast.xml
+fi
+
+# address section
+if [ -n "$SIMULCAST_MASTER_SERVER_BBR" ]; then
+    sed -i "s/<server>SIMULCAST_MASTER_SERVER_BBR<\/server>/<server>$SIMULCAST_MASTER_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNEL_MASTER_SERVER_BBR" ]; then
+    sed -i "s/<server>CHANNEL_MASTER_SERVER_BBR<\/server>/<server>$CHANNEL_MASTER_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$SIMULCAST_MASTER_SERVER_TDY" ]; then
+    sed -i "s/<server>SIMULCAST_MASTER_SERVER_TDY<\/server>/<server>$SIMULCAST_MASTER_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNEL_MASTER_SERVER_TDY" ]; then
+    sed -i "s/<server>CHANNEL_MASTER_SERVER_TDY<\/server>/<server>$CHANNEL_MASTER_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$SIMULCAST_MASTER_SERVER_OW" ]; then
+    sed -i "s/<server>SIMULCAST_MASTER_SERVER_OW<\/server>/<server>$SIMULCAST_MASTER_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNEL_MASTER_SERVER_OW" ]; then
+    sed -i "s/<server>CHANNEL_MASTER_SERVER_OW<\/server>/<server>$CHANNEL_MASTER_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
 fi
 
 # execution
