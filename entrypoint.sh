@@ -50,20 +50,38 @@ fi
 if [ -n "$SIMULCAST_MASTER_SERVER_BBR" ]; then
     sed -i "s/<server>SIMULCAST_MASTER_SERVER_BBR<\/server>/<server>$SIMULCAST_MASTER_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
 fi
-if [ -n "$CHANNEL_MASTER_SERVER_BBR" ]; then
-    sed -i "s/<server>CHANNEL_MASTER_SERVER_BBR<\/server>/<server>$CHANNEL_MASTER_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
+if [ -n "$CHANNELS_MASTER_SERVER_BBR" ]; then
+    sed -i "s/<server>CHANNELS_MASTER_SERVER_BBR<\/server>/<server>$CHANNELS_MASTER_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
 fi
 if [ -n "$SIMULCAST_MASTER_SERVER_TDY" ]; then
     sed -i "s/<server>SIMULCAST_MASTER_SERVER_TDY<\/server>/<server>$SIMULCAST_MASTER_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
 fi
-if [ -n "$CHANNEL_MASTER_SERVER_TDY" ]; then
-    sed -i "s/<server>CHANNEL_MASTER_SERVER_TDY<\/server>/<server>$CHANNEL_MASTER_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
+if [ -n "$CHANNELS_MASTER_SERVER_TDY" ]; then
+    sed -i "s/<server>CHANNELS_MASTER_SERVER_TDY<\/server>/<server>$CHANNELS_MASTER_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
 fi
 if [ -n "$SIMULCAST_MASTER_SERVER_OW" ]; then
     sed -i "s/<server>SIMULCAST_MASTER_SERVER_OW<\/server>/<server>$SIMULCAST_MASTER_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
 fi
-if [ -n "$CHANNEL_MASTER_SERVER_OW" ]; then
-    sed -i "s/<server>CHANNEL_MASTER_SERVER_OW<\/server>/<server>$CHANNEL_MASTER_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
+if [ -n "$CHANNELS_MASTER_SERVER_OW" ]; then
+    sed -i "s/<server>CHANNELS_MASTER_SERVER_OW<\/server>/<server>$CHANNELS_MASTER_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$SIMULCAST_PROXY_SERVER_BBR" ]; then
+    sed -i "s/<server>SIMULCAST_PROXY_SERVER_BBR<\/server>/<server>$SIMULCAST_PROXY_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNELS_PROXY_SERVER_BBR" ]; then
+    sed -i "s/<server>CHANNELS_PROXY_SERVER_BBR<\/server>/<server>$CHANNELS_PROXY_SERVER_BBR<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$SIMULCAST_PROXY_SERVER_TDY" ]; then
+    sed -i "s/<server>SIMULCAST_PROXY_SERVER_TDY<\/server>/<server>$SIMULCAST_PROXY_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNELS_PROXY_SERVER_TDY" ]; then
+    sed -i "s/<server>CHANNELS_PROXY_SERVER_TDY<\/server>/<server>$CHANNELS_PROXY_SERVER_TDY<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$SIMULCAST_PROXY_SERVER_OW" ]; then
+    sed -i "s/<server>SIMULCAST_PROXY_SERVER_OW<\/server>/<server>$SIMULCAST_PROXY_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
+fi
+if [ -n "$CHANNELS_PROXY_SERVER_OW" ]; then
+    sed -i "s/<server>CHANNELS_PROXY_SERVER_OW<\/server>/<server>$CHANNELS_PROXY_SERVER_OW<\/server>/g" /etc/icecast2/icecast.xml
 fi
 
 # execution

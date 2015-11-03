@@ -27,9 +27,9 @@ Container operates as a proxy for player containers.
 - SIMULCAST_MASTER_SERVER_BBR=*0.0.0.0*
 - SIMULCAST_MASTER_SERVER_TDY=*0.0.0.0*
 - SIMULCAST_MASTER_SERVER_OW=*0.0.0.0*
-- CHANNEL_MASTER_SERVER_BBR=*0.0.0.0*
-- CHANNEL_MASTER_SERVER_TDY=*0.0.0.0*
-- CHANNEL_MASTER_SERVER_OW=*0.0.0.0*
+- CHANNELS_MASTER_SERVER_BBR=*0.0.0.0*
+- CHANNELS_MASTER_SERVER_TDY=*0.0.0.0*
+- CHANNELS_MASTER_SERVER_OW=*0.0.0.0*
 
 #### EXPOSED
 - 8000
@@ -39,7 +39,7 @@ Container operates as a proxy for player containers.
 
 #### Run it
 ```bash
-$ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNEL_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast proxy
+$ docker run -d -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_MASTER_SERVER=address -e CHANNELS_MASTER_SERVER=address --name mycontainername xxaxxelxx/xx_icecast proxy
 ```
 ***
 
@@ -56,9 +56,9 @@ Container operates as a player and get his streams from a proxy.
 - SIMULCAST_PROXY_SERVER_BBR=*0.0.0.0*
 - SIMULCAST_PROXY_SERVER_TDY=*0.0.0.0*
 - SIMULCAST_PROXY_SERVER_OW=*0.0.0.0*
-- CHANNEL_PROXY_SERVER_BBR=*0.0.0.0*
-- CHANNEL_PROXY_SERVER_TDY=*0.0.0.0*
-- CHANNEL_PROXY_SERVER_OW=*0.0.0.0*
+- CHANNELS_PROXY_SERVER_BBR=*0.0.0.0*
+- CHANNELS_PROXY_SERVER_TDY=*0.0.0.0*
+- CHANNELS_PROXY_SERVER_OW=*0.0.0.0*
 
 #### EXPOSED
 - $IC_PORT
@@ -93,7 +93,7 @@ _ IC_PORT=*80*
 
 #### Run it
 ```bash
-$ docker run -it -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_PROXY_SERVER=address -e CHANNEL_PROXY_
+$ docker run -it -p 80:8000 -e IC_ADMIN_PASS=myspecialadminpass -e IC_SOURCE_PASS=*myspecialsourcepass -e IC_RELAY_PASS=*myspecialrelaypass -e SIMULCAST_PROXY_SERVER=address -e CHANNELS_PROXY_
 SERVER=address --name mycontainername xxaxxelxx/xx_icecast
 ```
 ***

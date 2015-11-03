@@ -15,7 +15,7 @@ RUN apt-get clean
 COPY icecast_player.xml /etc/icecast2/icecast_player.xml
 COPY icecast_proxy.xml /etc/icecast2/icecast_proxy.xml
 RUN chown icecast2:icecast /etc/icecast2/icecast*.xml
-RUN chmod 400 /etc/icecast2/icecast*.xml
+RUN chmod 600 /etc/icecast2/icecast*.xml
 
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chown icecast2:icecast /entrypoint.sh
@@ -24,8 +24,22 @@ RUN chmod 700 /entrypoint.sh
 ENV IC_SOURCE_PASS=myicsourcepass
 ENV IC_RELAY_PASS=myicrelaypass
 ENV IC_ADMIN_PASS=myicadminpass
-ENV SIMULCAST_MASTER_SERVER=0.0.0.0
-ENV CHANNEL_MASTER_SERVER=0.0.0.0
+
+ENV SIMULCAST_MASTER_SERVER_BBR=0.0.0.0
+ENV CHANNELS_MASTER_SERVER_BBR=0.0.0.0
+ENV SIMULCAST_MASTER_SERVER_TDY=0.0.0.0
+ENV CHANNELS_MASTER_SERVER_TDY=0.0.0.0
+ENV SIMULCAST_MASTER_SERVER_OW=0.0.0.0
+ENV CHANNELS_MASTER_SERVER_OW=0.0.0.0
+ENV SIMULCAST_PROXY_SERVER_BBR=0.0.0.0
+ENV CHANNELS_PROXY_SERVER_BBR=0.0.0.0
+ENV SIMULCAST_PROXY_SERVER_TDY=0.0.0.0
+ENV CHANNELS_PROXY_SERVER_TDY=0.0.0.0
+ENV SIMULCAST_PROXY_SERVER_OW=0.0.0.0
+ENV CHANNELS_PROXY_SERVER_OW=0.0.0.0
+
+ENV MASTER_SERVER_PORT=80
+ENV PROXY_SERVER_PORT=8000
 
 USER icecast2:icecast
 
