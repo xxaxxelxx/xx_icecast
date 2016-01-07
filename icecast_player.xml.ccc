@@ -140,11 +140,13 @@
 	<mount>/intro.bbradio.mp3</mount>
 	<local-mount>/bbradio.mp3</local-mount>
 	<on-demand>0</on-demand>
+	<!--username>source</source-->
+	<!--password>mypassword</password-->
     </relay>
 
 
     <mount>
-        <mount-name>/intro.bbradio-mobile.mp3</mount-name>
+        <mount-name>/bbradio-mobile.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -168,6 +170,7 @@
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-mobile.mp3</stream-url>
         
+        
         <!--authentication type="htpasswd">
                 <option name="filename" value="myauth"/>
                 <option name="allow_duplicate_users" value="0"/>
@@ -175,16 +178,23 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
+
     <relay>
 	<server>127.0.0.1</server>
 	<port>IC_PORT</port>
-	<mount>/intro.bbradio-mobile.mp3</mount>
-	<local-mount>/bbradio-mobile.mp3</local-mount>
-	<on-demand>0</on-demand>
+	<mount>/bbradio-mobile.mp3</mount>
+	<local-mount>/bbradio-mobile-ios.mp3</local-mount>
+    </relay>
+
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/bbradio-mobile.mp3</mount>
+	<local-mount>/bbradio-mobile-android.mp3</local-mount>
     </relay>
 
     <mount>
-        <mount-name>/intro.bbradio.ogg</mount-name>
+        <mount-name>/bbradio.ogg</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -216,16 +226,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio.ogg</mount>
-	<local-mount>/bbradio.ogg</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
     <mount>
-        <mount-name>/intro.bbradio.opus</mount-name>
+        <mount-name>/bbradio.opus</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -257,16 +260,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio.opus</mount>
-	<local-mount>/bbradio.opus</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
     <mount>
-        <mount-name>/intro.bbradio.aac</mount-name>
+        <mount-name>/bbradio.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -297,19 +293,58 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
    </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio.aac</mount>
-	<local-mount>/bbradio.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xx BB RADIO CHANNELS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<relay>
+    <server>CHANNELS_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
+    <mount>/bbradio-ch00.mp3</mount>
+    <local-mount>/bbradio-ch00_master.mp3</local-mount>
+    <!--username>source</source-->
+    <!--password>sourcepass</password-->
+</relay>
+    <mount>
+        <mount-name>/bbradio-ch00.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_bbradio-ch00.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_bbradio-ch.mp3</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
+        <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/bbradio-ch00.mp3</stream-url>
+    </mount>
+    <mount>
+        <mount-name>/bbradio-ch00.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_bbradio-ch00.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_bbradio-ch.aac</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>BB RADIO Stereo AAC Stream</stream-name>
+        <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/bbradio-ch00.aac</stream-url>
+    </mount>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -320,7 +355,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch01.mp3</mount-name>
+        <mount-name>/bbradio-ch01.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -331,22 +366,15 @@
         <fallback-mount>/fallback_bbradio-ch01.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch01.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch01.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch01.mp3</mount>
-	<local-mount>/bbradio-ch01.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch01.aac</mount-name>
+        <mount-name>/bbradio-ch01.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -357,20 +385,13 @@
         <fallback-mount>/fallback_bbradio-ch01.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch01.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch01.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch01.aac</mount>
-	<local-mount>/bbradio-ch01.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -381,7 +402,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch02.mp3</mount-name>
+        <mount-name>/bbradio-ch02.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -392,22 +413,15 @@
         <fallback-mount>/fallback_bbradio-ch02.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch02.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch02.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch02.mp3</mount>
-	<local-mount>/bbradio-ch02.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch02.aac</mount-name>
+        <mount-name>/bbradio-ch02.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -418,20 +432,13 @@
         <fallback-mount>/fallback_bbradio-ch02.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch02.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch02.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch02.aac</mount>
-	<local-mount>/bbradio-ch02.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -442,7 +449,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch03.mp3</mount-name>
+        <mount-name>/bbradio-ch03.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -453,23 +460,15 @@
         <fallback-mount>/fallback_bbradio-ch03.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch03.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch03.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch03.mp3</mount>
-	<local-mount>/bbradio-ch03.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
-
     <mount>
-        <mount-name>/intro.bbradio-ch03.aac</mount-name>
+        <mount-name>/bbradio-ch03.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -480,20 +479,13 @@
         <fallback-mount>/fallback_bbradio-ch03.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch03.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch03.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch03.aac</mount>
-	<local-mount>/bbradio-ch03.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -504,7 +496,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch04.mp3</mount-name>
+        <mount-name>/bbradio-ch04.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -515,22 +507,15 @@
         <fallback-mount>/fallback_bbradio-ch04.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch04.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch04.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch04.mp3</mount>
-	<local-mount>/bbradio-ch04.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch04.aac</mount-name>
+        <mount-name>/bbradio-ch04.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -541,20 +526,13 @@
         <fallback-mount>/fallback_bbradio-ch04.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch04.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch04.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch04.aac</mount>
-	<local-mount>/bbradio-ch04.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -565,7 +543,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch05.mp3</mount-name>
+        <mount-name>/bbradio-ch05.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -576,22 +554,15 @@
         <fallback-mount>/fallback_bbradio-ch05.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch05.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch05.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch05.mp3</mount>
-	<local-mount>/bbradio-ch05.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch05.aac</mount-name>
+        <mount-name>/bbradio-ch05.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -602,20 +573,13 @@
         <fallback-mount>/fallback_bbradio-ch05.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch05.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch05.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch05.aac</mount>
-	<local-mount>/bbradio-ch05.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -626,7 +590,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch06.mp3</mount-name>
+        <mount-name>/bbradio-ch06.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -637,22 +601,15 @@
         <fallback-mount>/fallback_bbradio-ch06.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch06.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch06.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch06.mp3</mount>
-	<local-mount>/bbradio-ch06.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch06.aac</mount-name>
+        <mount-name>/bbradio-ch06.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -663,20 +620,13 @@
         <fallback-mount>/fallback_bbradio-ch06.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch06.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch06.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch06.aac</mount>
-	<local-mount>/bbradio-ch06.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -687,7 +637,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch07.mp3</mount-name>
+        <mount-name>/bbradio-ch07.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -698,22 +648,15 @@
         <fallback-mount>/fallback_bbradio-ch07.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch07.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch07.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch07.mp3</mount>
-	<local-mount>/bbradio-ch07.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch07.aac</mount-name>
+        <mount-name>/bbradio-ch07.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -724,20 +667,13 @@
         <fallback-mount>/fallback_bbradio-ch07.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch07.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch07.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch07.aac</mount>
-	<local-mount>/bbradio-ch07.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -748,7 +684,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch08.mp3</mount-name>
+        <mount-name>/bbradio-ch08.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -759,22 +695,15 @@
         <fallback-mount>/fallback_bbradio-ch08.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch08.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch08.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch08.mp3</mount>
-	<local-mount>/bbradio-ch08.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch08.aac</mount-name>
+        <mount-name>/bbradio-ch08.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -785,20 +714,13 @@
         <fallback-mount>/fallback_bbradio-ch08.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch08.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch08.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch08.aac</mount>
-	<local-mount>/bbradio-ch08.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     
 <relay>
     <server>CHANNELS_PROXY_SERVER_BBR</server>
@@ -809,7 +731,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.bbradio-ch09.mp3</mount-name>
+        <mount-name>/bbradio-ch09.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -820,23 +742,15 @@
         <fallback-mount>/fallback_bbradio-ch09.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch09.mp3</intro>
+        <intro>/intro_bbradio-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch09.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch09.mp3</mount>
-	<local-mount>/bbradio-ch09.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
-
     <mount>
-        <mount-name>/intro.bbradio-ch09.aac</mount-name>
+        <mount-name>/bbradio-ch09.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -847,20 +761,13 @@
         <fallback-mount>/fallback_bbradio-ch09.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_bbradio-ch09.aac</intro>
+        <intro>/intro_bbradio-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>BB RADIO Stereo AAC Stream</stream-name>
         <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/bbradio-ch09.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.bbradio-ch09.aac</mount>
-	<local-mount>/bbradio-ch09.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -877,8 +784,9 @@
 	<!--username>source</source-->
 	<!--password>IC_SRC_PASS</password-->
     </relay>
+
     <mount>
-        <mount-name>/intro.radioteddy.mp3</mount-name>
+        <mount-name>/radioteddy.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -910,16 +818,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy.mp3</mount>
-	<local-mount>/radioteddy.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
-
+    
     <mount>
-        <mount-name>/intro.radioteddy-mobile.mp3</mount-name>
+        <mount-name>/radioteddy-mobile.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -951,16 +852,23 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
+
     <relay>
 	<server>127.0.0.1</server>
 	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-mobile.mp3</mount>
-	<local-mount>/radioteddy-mobile.mp3</local-mount>
-	<on-demand>0</on-demand>
+	<mount>/radioteddy-mobile.mp3</mount>
+	<local-mount>/radioteddy-mobile-ios.mp3</local-mount>
+    </relay>
+
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/radioteddy-mobile.mp3</mount>
+	<local-mount>/radioteddy-mobile-android.mp3</local-mount>
     </relay>
 
     <mount>
-        <mount-name>/intro.radioteddy.ogg</mount-name>
+        <mount-name>/radioteddy.ogg</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -992,16 +900,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy.ogg</mount>
-	<local-mount>/radioteddy.ogg</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
     <mount>
-        <mount-name>/intro.radioteddy.opus</mount-name>
+        <mount-name>/radioteddy.opus</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1033,16 +934,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy.opus</mount>
-	<local-mount>/radioteddy.opus</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
     <mount>
-        <mount-name>/intro.radioteddy.aac</mount-name>
+        <mount-name>/radioteddy.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1073,13 +967,6 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy.aac</mount>
-	<local-mount>/radioteddy.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -1087,6 +974,52 @@
 <!-- xx Radio TEDDY CHANNELS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<relay>
+    <server>CHANNELS_PROXY_SERVER_TDY</server>
+    <port>PROXY_SERVER_PORT</port>
+    <mount>/radioteddy-ch00.mp3</mount>
+    <local-mount>/radioteddy-ch00_master.mp3</local-mount>
+    <!--username>source</source-->
+    <!--password>IC_SRC_PASS</password-->
+</relay>
+    <mount>
+        <mount-name>/radioteddy-ch00.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_radioteddy-ch00.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_radioteddy-ch.mp3</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
+        <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/radioteddy-ch00.mp3</stream-url>
+    </mount>
+    <mount>
+        <mount-name>/radioteddy-ch00.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_radioteddy-ch00.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_radioteddy-ch.aac</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
+        <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/radioteddy-ch00.aac</stream-url>
+    </mount>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1097,7 +1030,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch01.mp3</mount-name>
+        <mount-name>/radioteddy-ch01.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1108,22 +1041,15 @@
         <fallback-mount>/fallback_radioteddy-ch01.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch01.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch01.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch01.mp3</mount>
-	<local-mount>/radioteddy-ch01.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch01.aac</mount-name>
+        <mount-name>/radioteddy-ch01.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1134,20 +1060,13 @@
         <fallback-mount>/fallback_radioteddy-ch01.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch01.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch01.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch01.aac</mount>
-	<local-mount>/radioteddy-ch01.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1158,7 +1077,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch02.mp3</mount-name>
+        <mount-name>/radioteddy-ch02.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1169,22 +1088,15 @@
         <fallback-mount>/fallback_radioteddy-ch02.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch02.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch02.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch02.mp3</mount>
-	<local-mount>/radioteddy-ch02.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch02.aac</mount-name>
+        <mount-name>/radioteddy-ch02.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1195,20 +1107,13 @@
         <fallback-mount>/fallback_radioteddy-ch02.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch02.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch02.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch02.aac</mount>
-	<local-mount>/radioteddy-ch02.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1219,7 +1124,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch03.mp3</mount-name>
+        <mount-name>/radioteddy-ch03.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1230,22 +1135,15 @@
         <fallback-mount>/fallback_radioteddy-ch03.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch03.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch03.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch03.mp3</mount>
-	<local-mount>/radioteddy-ch03.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch03.aac</mount-name>
+        <mount-name>/radioteddy-ch03.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1256,20 +1154,13 @@
         <fallback-mount>/fallback_radioteddy-ch03.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch03.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch03.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch03.aac</mount>
-	<local-mount>/radioteddy-ch03.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1280,7 +1171,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch04.mp3</mount-name>
+        <mount-name>/radioteddy-ch04.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1291,22 +1182,15 @@
         <fallback-mount>/fallback_radioteddy-ch04.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch04.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch04.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch04.mp3</mount>
-	<local-mount>/radioteddy-ch04.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch04.aac</mount-name>
+        <mount-name>/radioteddy-ch04.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1317,20 +1201,13 @@
         <fallback-mount>/fallback_radioteddy-ch04.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch04.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch04.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch04.aac</mount>
-	<local-mount>/radioteddy-ch04.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1341,7 +1218,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch05.mp3</mount-name>
+        <mount-name>/radioteddy-ch05.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1352,22 +1229,15 @@
         <fallback-mount>/fallback_radioteddy-ch05.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch05.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch05.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch05.mp3</mount>
-	<local-mount>/radioteddy-ch05.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch05.aac</mount-name>
+        <mount-name>/radioteddy-ch05.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1378,20 +1248,13 @@
         <fallback-mount>/fallback_radioteddy-ch05.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch05.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch05.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch05.aac</mount>
-	<local-mount>/radioteddy-ch05.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1402,7 +1265,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch06.mp3</mount-name>
+        <mount-name>/radioteddy-ch06.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1413,22 +1276,15 @@
         <fallback-mount>/fallback_radioteddy-ch06.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch06.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch06.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch06.mp3</mount>
-	<local-mount>/radioteddy-ch06.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch06.aac</mount-name>
+        <mount-name>/radioteddy-ch06.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1439,20 +1295,13 @@
         <fallback-mount>/fallback_radioteddy-ch06.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch06.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch06.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch06.aac</mount>
-	<local-mount>/radioteddy-ch06.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1463,7 +1312,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch07.mp3</mount-name>
+        <mount-name>/radioteddy-ch07.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1474,22 +1323,15 @@
         <fallback-mount>/fallback_radioteddy-ch07.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch07.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch07.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch07.mp3</mount>
-	<local-mount>/radioteddy-ch07.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch07.aac</mount-name>
+        <mount-name>/radioteddy-ch07.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1500,20 +1342,13 @@
         <fallback-mount>/fallback_radioteddy-ch07.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch07.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch07.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch07.aac</mount>
-	<local-mount>/radioteddy-ch07.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_TDY</server>
@@ -1524,7 +1359,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch08.mp3</mount-name>
+        <mount-name>/radioteddy-ch08.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1535,22 +1370,15 @@
         <fallback-mount>/fallback_radioteddy-ch08.mp3</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch08.mp3</intro>
+        <intro>/intro_radioteddy-ch.mp3</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo MP3 Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch08.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch08.mp3</mount>
-	<local-mount>/radioteddy-ch08.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.radioteddy-ch08.aac</mount-name>
+        <mount-name>/radioteddy-ch08.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1561,20 +1389,13 @@
         <fallback-mount>/fallback_radioteddy-ch08.aac</fallback-mount>
         <fallback-override>1</fallback-override>
         <fallback-when-full>1</fallback-when-full>
-        <intro>/intro_radioteddy-ch08.aac</intro>
+        <intro>/intro_radioteddy-ch.aac</intro>
         <hidden>0</hidden>
         <public>0</public>
         <stream-name>Radio TEDDY Stereo AAC Stream</stream-name>
         <stream-description>We stream Radio TEDDY. Please report problems to stream@radioteddy.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/radioteddy-ch08.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.radioteddy-ch08.aac</mount>
-	<local-mount>/radioteddy-ch08.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -1593,7 +1414,7 @@
     </relay>
 
     <mount>
-        <mount-name>/intro.ostseewelle.mp3</mount-name>
+        <mount-name>/ostseewelle.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1625,16 +1446,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle.mp3</mount>
-	<local-mount>/ostseewelle.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     
     <mount>
-        <mount-name>/intro.ostseewelle-mobile.mp3</mount-name>
+        <mount-name>/ostseewelle-mobile.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1666,16 +1480,23 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
+
     <relay>
 	<server>127.0.0.1</server>
 	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-mobile.mp3</mount>
-	<local-mount>/ostseewelle-mobile.mp3</local-mount>
-	<on-demand>0</on-demand>
+	<mount>/ostseewelle-mobile.mp3</mount>
+	<local-mount>/ostseewelle-mobile-ios.mp3</local-mount>
+    </relay>
+
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/ostseewelle-mobile.mp3</mount>
+	<local-mount>/ostseewelle-mobile-android.mp3</local-mount>
     </relay>
 
     <mount>
-        <mount-name>/intro.ostseewelle.ogg</mount-name>
+        <mount-name>/ostseewelle.ogg</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1707,17 +1528,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle.ogg</mount>
-	<local-mount>/ostseewelle.ogg</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
-
 
     <mount>
-        <mount-name>/intro.ostseewelle.opus</mount-name>
+        <mount-name>/ostseewelle.opus</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1749,16 +1562,9 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle.opus</mount>
-	<local-mount>/ostseewelle.opus</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
     <mount>
-        <mount-name>/intro.ostseewelle.aac</mount-name>
+        <mount-name>/ostseewelle.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
 
@@ -1789,13 +1595,6 @@
         <!--on-connect>/home/icecast/bin/stream-start</on-connect-->
         <!--on-disconnect>/home/icecast/bin/stream-stop</on-disconnect-->
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle.aac</mount>
-	<local-mount>/ostseewelle.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -1806,13 +1605,60 @@
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
     <port>PROXY_SERVER_PORT</port>
+    <mount>/ostseewelle-ch00.mp3</mount>
+    <local-mount>/ostseewelle-ch00_master.mp3</local-mount>
+    <!--username>source</source-->
+    <!--password>IC_SRC_PASS</password-->
+</relay>
+    <mount>
+        <mount-name>/ostseewelle-ch00.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_ostseewelle-ch00.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_ostseewelle-ch00.mp3</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>OSTSEEWELLE Stereo MP3 Stream</stream-name>
+        <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch00.mp3</stream-url>
+    </mount>
+    <mount>
+        <mount-name>/ostseewelle-ch00.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_ostseewelle-ch00.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_ostseewelle-ch00.aac</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>OSTSEEWELLE Stereo AAC Stream</stream-name>
+        <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch00.aac</stream-url>
+    </mount>
+
+<relay>
+    <server>CHANNELS_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
     <mount>/ostseewelle-ch01.mp3</mount>
     <local-mount>/ostseewelle-ch01_master.mp3</local-mount>
     <!--username>source</source-->
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch01.mp3</mount-name>
+        <mount-name>/ostseewelle-ch01.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1830,15 +1676,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch01.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch01.mp3</mount>
-	<local-mount>/ostseewelle-ch01.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch01.aac</mount-name>
+        <mount-name>/ostseewelle-ch01.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1856,13 +1695,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch01.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch01.aac</mount>
-	<local-mount>/ostseewelle-ch01.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -1873,7 +1705,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch02.mp3</mount-name>
+        <mount-name>/ostseewelle-ch02.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1891,15 +1723,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch02.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch02.mp3</mount>
-	<local-mount>/ostseewelle-ch02.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch02.aac</mount-name>
+        <mount-name>/ostseewelle-ch02.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1917,13 +1742,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch02.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch02.aac</mount>
-	<local-mount>/ostseewelle-ch02.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -1934,7 +1752,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch03.mp3</mount-name>
+        <mount-name>/ostseewelle-ch03.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1952,15 +1770,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch03.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch03.mp3</mount>
-	<local-mount>/ostseewelle-ch03.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch03.aac</mount-name>
+        <mount-name>/ostseewelle-ch03.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -1978,13 +1789,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch03.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch03.aac</mount>
-	<local-mount>/ostseewelle-ch03.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -1995,7 +1799,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch04.mp3</mount-name>
+        <mount-name>/ostseewelle-ch04.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2013,15 +1817,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch04.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch04.mp3</mount>
-	<local-mount>/ostseewelle-ch04.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch04.aac</mount-name>
+        <mount-name>/ostseewelle-ch04.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2039,13 +1836,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch04.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch04.aac</mount>
-	<local-mount>/ostseewelle-ch04.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -2056,7 +1846,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch05.mp3</mount-name>
+        <mount-name>/ostseewelle-ch05.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2074,15 +1864,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch05.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch05.mp3</mount>
-	<local-mount>/ostseewelle-ch05.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch05.aac</mount-name>
+        <mount-name>/ostseewelle-ch05.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2100,13 +1883,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch05.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch05.aac</mount>
-	<local-mount>/ostseewelle-ch05.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -2117,7 +1893,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch06.mp3</mount-name>
+        <mount-name>/ostseewelle-ch06.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2135,15 +1911,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch06.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch06.mp3</mount>
-	<local-mount>/ostseewelle-ch06.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch06.aac</mount-name>
+        <mount-name>/ostseewelle-ch06.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2161,13 +1930,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch06.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch06.aac</mount>
-	<local-mount>/ostseewelle-ch06.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -2178,7 +1940,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch07.mp3</mount-name>
+        <mount-name>/ostseewelle-ch07.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2196,15 +1958,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch07.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch07.mp3</mount>
-	<local-mount>/ostseewelle-ch07.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch07.aac</mount-name>
+        <mount-name>/ostseewelle-ch07.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2222,13 +1977,6 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch07.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch07.aac</mount>
-	<local-mount>/ostseewelle-ch07.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
 
 <relay>
     <server>CHANNELS_PROXY_SERVER_OW</server>
@@ -2239,7 +1987,7 @@
     <!--password>IC_SRC_PASS</password-->
 </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch08.mp3</mount-name>
+        <mount-name>/ostseewelle-ch08.mp3</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2257,15 +2005,8 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch08.mp3</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch08.mp3</mount>
-	<local-mount>/ostseewelle-ch08.mp3</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
     <mount>
-        <mount-name>/intro.ostseewelle-ch08.aac</mount-name>
+        <mount-name>/ostseewelle-ch08.aac</mount-name>
         <!--username>source</username-->
         <!--password>IC_SOURCE_PASS</password-->
         <max-listeners>1024</max-listeners>
@@ -2283,13 +2024,7 @@
         <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
         <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch08.aac</stream-url>
     </mount>
-    <relay>
-	<server>127.0.0.1</server>
-	<port>IC_PORT</port>
-	<mount>/intro.ostseewelle-ch08.aac</mount>
-	<local-mount>/ostseewelle-ch08.aac</local-mount>
-	<on-demand>0</on-demand>
-    </relay>
+
 
 <!--
     <mount>
