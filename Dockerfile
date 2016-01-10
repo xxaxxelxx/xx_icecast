@@ -9,6 +9,7 @@ RUN apt-get -qq -y install icecast2
 
 RUN apt-get -qq -y install telnet
 RUN apt-get -qq -y install links
+RUN apt-get -qq -y install mc
 
 RUN apt-get clean
 
