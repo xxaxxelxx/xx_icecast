@@ -22,6 +22,11 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chown icecast2:icecast /entrypoint.sh
 RUN chmod 700 /entrypoint.sh
 
+#
+RUN chown -R icecast2:icecast /var/log/icecast2
+RUN chown -R icecast2:icecast /usr/share/icecast2
+#
+
 ENV IC_SOURCE_PASS=myicsourcepass
 ENV IC_RELAY_PASS=myicrelaypass
 ENV IC_ADMIN_PASS=myicadminpass
