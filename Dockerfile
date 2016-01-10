@@ -23,8 +23,8 @@ RUN chown icecast2:icecast /entrypoint.sh
 RUN chmod 700 /entrypoint.sh
 
 #
-RUN chown -R icecast2:icecast /var/log/icecast2
-RUN chown -R icecast2:icecast /usr/share/icecast2
+RUN chown icecast2:icecast /var/log/icecast2
+RUN chown icecast2:icecast /usr/share/icecast2
 #
 
 ENV IC_SOURCE_PASS=myicsourcepass
