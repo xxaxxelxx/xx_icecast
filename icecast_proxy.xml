@@ -170,6 +170,13 @@
     <local-mount>/bbradio-ch09.mp3</local-mount>
 </relay>
 
+<relay>
+    <server>CHANNELS_MASTER_SERVER_BBR</server>
+    <port>MASTER_SERVER_PORT</port>
+    <mount>/bbradio-ch10.out</mount>
+    <local-mount>/bbradio-ch10.mp3</local-mount>
+</relay>
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xx RADIO TEDDY xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->

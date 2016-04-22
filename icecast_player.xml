@@ -862,6 +862,68 @@
 	<on-demand>0</on-demand>
     </relay>
 
+<relay>
+    <server>CHANNELS_PROXY_SERVER_BBR</server>
+    <port>PROXY_SERVER_PORT</port>
+    <mount>/bbradio-ch10.mp3</mount>
+    <local-mount>/bbradio-ch10_master.mp3</local-mount>
+    <!--username>source</source-->
+    <!--password>IC_SRC_PASS</password-->
+</relay>
+    <mount>
+        <mount-name>/intro.bbradio-ch10.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_bbradio-ch10.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_bbradio-ch10.mp3</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>BB RADIO Stereo MP3 Stream</stream-name>
+        <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/bbradio-ch10.mp3</stream-url>
+    </mount>
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/intro.bbradio-ch10.mp3</mount>
+	<local-mount>/bbradio-ch10.mp3</local-mount>
+	<on-demand>0</on-demand>
+    </relay>
+
+    <mount>
+        <mount-name>/intro.bbradio-ch10.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_bbradio-ch10.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_bbradio-ch10.aac</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>BB RADIO Stereo AAC Stream</stream-name>
+        <stream-description>We stream BB RADIO. Please report problems to stream@bbradio.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/bbradio-ch10.aac</stream-url>
+    </mount>
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/intro.bbradio-ch10.aac</mount>
+	<local-mount>/bbradio-ch10.aac</local-mount>
+	<on-demand>0</on-demand>
+    </relay>
+
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
