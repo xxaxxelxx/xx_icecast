@@ -2353,6 +2353,67 @@
 	<on-demand>0</on-demand>
     </relay>
 
+<relay>
+    <server>CHANNELS_PROXY_SERVER_OW</server>
+    <port>PROXY_SERVER_PORT</port>
+    <mount>/ostseewelle-ch09.mp3</mount>
+    <local-mount>/ostseewelle-ch09_master.mp3</local-mount>
+    <!--username>source</source-->
+    <!--password>IC_SRC_PASS</password-->
+</relay>
+    <mount>
+        <mount-name>/intro.ostseewelle-ch09.mp3</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_ostseewelle-ch09.mp3</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_ostseewelle-ch09.mp3</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>OSTSEEWELLE Stereo MP3 Stream</stream-name>
+        <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch09.mp3</stream-url>
+    </mount>
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/intro.ostseewelle-ch09.mp3</mount>
+	<local-mount>/ostseewelle-ch09.mp3</local-mount>
+	<on-demand>0</on-demand>
+    </relay>
+    <mount>
+        <mount-name>/intro.ostseewelle-ch09.aac</mount-name>
+        <!--username>source</username-->
+        <!--password>IC_SOURCE_PASS</password-->
+        <max-listeners>1024</max-listeners>
+        <!--max-listener-duration>86400</max-listener-duration-->
+        <max-listener-duration>86340</max-listener-duration>
+        <!--dump-file>/tmp/dump-example1.ogg</dump-file-->
+        <burst-size>131072</burst-size>
+        <fallback-mount>/fallback_ostseewelle-ch09.aac</fallback-mount>
+        <fallback-override>1</fallback-override>
+        <fallback-when-full>1</fallback-when-full>
+        <intro>/intro_ostseewelle-ch09.aac</intro>
+        <hidden>0</hidden>
+        <public>0</public>
+        <stream-name>OSTSEEWELLE Stereo AAC Stream</stream-name>
+        <stream-description>We stream OSTSEEWELLE. Please report problems to stream@ostseewelle.de. Stay tuned. Enjoy the show.</stream-description>
+        <stream-url>http://streams.ir-media-tec.com/ostseewelle-ch09.aac</stream-url>
+    </mount>
+    <relay>
+	<server>127.0.0.1</server>
+	<port>IC_PORT</port>
+	<mount>/intro.ostseewelle-ch09.aac</mount>
+	<local-mount>/ostseewelle-ch09.aac</local-mount>
+	<on-demand>0</on-demand>
+    </relay>
+
 <!--
     <mount>
         <mount-name>/auth_example.ogg</mount-name>

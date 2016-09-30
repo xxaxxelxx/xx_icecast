@@ -329,6 +329,13 @@
     <local-mount>/ostseewelle-ch08.mp3</local-mount>
 </relay>
 
+<relay>
+    <server>CHANNELS_MASTER_SERVER_OW</server>
+    <port>MASTER_SERVER_PORT</port>
+    <mount>/ostseewelle-ch09.out</mount>
+    <local-mount>/ostseewelle-ch09.mp3</local-mount>
+</relay>
+
 <!--#######################################################################################################################-->
 <!--
     <mount>
